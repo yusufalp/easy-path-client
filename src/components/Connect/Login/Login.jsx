@@ -35,6 +35,7 @@ function Login() {
       setErrorMessage(error.message);
     }
   };
+  
   return (
     <div className="max-w-lg mx-auto rounded-lg shadow-lg px-8 py-12 my-12 flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-8">Log in</h1>
