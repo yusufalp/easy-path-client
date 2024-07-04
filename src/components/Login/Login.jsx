@@ -24,7 +24,7 @@ function Login() {
             type="password"
             id="password"
             name="password"
-            placeholder="Enter your password here"
+            placeholder="Enter a strong password"
             required
             className="p-2 rounded-md border-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
           />
@@ -39,14 +39,20 @@ function Login() {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white text-lg py-2 px-4 rounded-md shadow-sm"
+          className="bg-blue-500 hover:bg-blue-600 text-white text-lg mt-4 py-2 px-4 rounded-md shadow-sm"
         >
           Log in
         </button>
         <div className="mt-4 text-center">
-          <a href="/signup" className="text-grey-600 hover:text-blue-600">
-            Sign up
-          </a>
+          <p>
+            Don&apos;t have an account?{" "}
+            <a
+              href="/signup"
+              className="underline hover:no-underline text-blue-500 hover:text-blue-600"
+            >
+              Sign up
+            </a>
+          </p>
         </div>
       </form>
     </div>
