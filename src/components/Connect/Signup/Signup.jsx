@@ -70,7 +70,7 @@ function Signup() {
             Already have an account?{" "}
             <a
               href="/login"
-              className="text-grey-600 underline hover:text-blue-600"
+              className="underline hover:no-underline text-blue-500 hover:text-blue-600"
             >
               Log in
             </a>
