@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Divider from "../../../shared/Divider/Divider";
-import Social from "../Social/Social";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -35,12 +33,10 @@ function Login() {
       setErrorMessage(error.message);
     }
   };
-  
+
   return (
     <div className="max-w-lg mx-auto rounded-lg shadow-lg px-8 py-12 my-12 flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-8">Log in</h1>
-      <Social media="google" />
-      <Divider message="or" />
       <form onSubmit={handleLoginForm} className="w-96 flex flex-col gap-4">
         <div className="flex flex-start flex-col justify-start">
           <label htmlFor="email" className="text-lg mb-2">
@@ -56,7 +52,7 @@ function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="p-2 rounded-md border-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
-            />
+          />
         </div>
         <div className="flex flex-start flex-col justify-start">
           <label htmlFor="password" className="text-lg mb-2">

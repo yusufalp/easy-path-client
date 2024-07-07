@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
-import Divider from "../../../shared/Divider/Divider";
-import Social from "../Social/Social";
-
 function Signup() {
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
@@ -38,7 +35,6 @@ function Signup() {
       if (result.error) {
         throw new Error(result.error.message);
       }
-      console.log("result :>> ", result);
 
       history.push("/login");
     } catch (error) {
@@ -49,8 +45,6 @@ function Signup() {
   return (
     <div className="max-w-lg mx-auto rounded-lg shadow-lg px-8 py-12 my-12 flex flex-col items-center">
       <h1 className="text-2xl font-bold mb-8">Create an Account</h1>
-      <Social media="google" />
-      <Divider message="or" />
       <form onSubmit={handleSignupForm} className="w-96 flex flex-col gap-4">
         <div className="flex flex-start flex-col justify-start">
           <label htmlFor="first" className="text-lg mb-2">
