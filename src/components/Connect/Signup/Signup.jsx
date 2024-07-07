@@ -12,7 +12,6 @@ function Signup() {
 
   const handleSignupForm = async (e) => {
     e.preventDefault();
-    console.log(first, last, email, password);
 
     const body = {
       first,
@@ -36,6 +35,7 @@ function Signup() {
         throw new Error(result.error.message);
       }
 
+      console.log('signup :>> ', result);
       history.push("/login");
     } catch (error) {
       setErrorMessage(error.message);

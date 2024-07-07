@@ -28,7 +28,7 @@ function Login() {
         throw new Error(result.error.message);
       }
 
-      console.log("result :>> ", result);
+      console.log("login :>> ", result);
     } catch (error) {
       setErrorMessage(error.message);
     }
