@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
+import { ROLES } from "../../../utils/constants";
+import { capitalize } from "../../../utils";
+
 function Signup() {
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const history = useHistory();
@@ -18,6 +22,7 @@ function Signup() {
       last,
       email,
       password,
+      role,
     };
 
     try {
@@ -35,7 +40,6 @@ function Signup() {
         throw new Error(result.error.message);
       }
 
-      console.log('signup :>> ', result);
       history.push("/login");
     } catch (error) {
       setErrorMessage(error.message);
@@ -108,6 +112,28 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             className="p-2 rounded-md border-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
           />
+        </div>
+        <div className="flex flex-start flex-col justify-start">
+          <label htmlFor="role" className="text-lg mb-2">
+            Role
+          </label>
+          <select
+            name="role"
+            id="role"
+            required
+            className="p-2 rounded-md border-2 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="">Please select an option</option>
+            {ROLES.map(
+              (role) =>
+                role !== "admin" && (
+                  <option key={role} value={role}>
+                    {capitalize(role)}
+                  </option>
+                )
+            )}
+          </select>
         </div>
         <button
           type="submit"

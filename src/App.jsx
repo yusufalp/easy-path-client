@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import Home from "./components/Home/Home";
 import Login from "./components/Connect/Login/Login";
 import Signup from "./components/Connect/Signup/Signup";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       </Route>
       <Route path="/signup">
         <Signup />
+      </Route>
+      <Route path="/dashboard">
+        <Dashboard />
       </Route>
     </Switch>
   );

@@ -30,15 +30,16 @@ function Login() {
       });
 
       const result = await response.json();
-      console.log("login :>> ", result);
 
       if (result.error) {
         throw new Error(result.error.message);
       }
 
-      dispatch(
-        login({ user: result.data.user, token: result.data.accessToken })
-      );
+      const user = result.data.user;
+      const token = result.data.accessToken;
+
+      dispatch(login({ user, token }));
+
       history.push("/dashboard");
     } catch (error) {
       setErrorMessage(error.message);
