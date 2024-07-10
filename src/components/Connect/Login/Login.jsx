@@ -1,9 +1,15 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { login } from "../../../store/features/authSlice";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleLoginForm = async (e) => {
     e.preventDefault();
@@ -19,16 +25,21 @@ function Login() {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(body),
       });
 
       const result = await response.json();
+      console.log("login :>> ", result);
 
       if (result.error) {
         throw new Error(result.error.message);
       }
 
-      console.log("login :>> ", result);
+      dispatch(
+        login({ user: result.data.user, token: result.data.accessToken })
+      );
+      history.push("/dashboard");
     } catch (error) {
       setErrorMessage(error.message);
     }
