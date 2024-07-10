@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { ROLES } from "../../../utils/constants";
+import { ROLES } from "../../../constants";
 import { capitalize } from "../../../utils";
 
 function Signup() {
