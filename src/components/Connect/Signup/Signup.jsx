@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import { ROLES } from "../../../utils/constants";
 import { capitalize } from "../../../utils";
