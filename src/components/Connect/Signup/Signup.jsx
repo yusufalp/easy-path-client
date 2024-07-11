@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { ROLES } from "../../../constants";
 import { capitalize } from "../../../utils";
@@ -145,12 +145,12 @@ function Signup() {
         <div className="mt-4 text-center">
           <p>
             Already have an account?{" "}
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="underline hover:no-underline text-blue-500 hover:text-blue-600"
             >
               Log in
-            </a>
+            </Link>
           </p>
         </div>
       </form>
