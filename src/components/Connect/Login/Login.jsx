@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { login } from "../../../store/features/authSlice";
 
@@ -101,12 +101,12 @@ function Login() {
         <div className="mt-4 text-center">
           <p>
             Don&apos;t have an account?{" "}
-            <a
-              href="/signup"
+            <Link
+              to="/signup"
               className="underline hover:no-underline text-blue-500 hover:text-blue-600"
             >
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </form>
