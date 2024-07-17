@@ -1,4 +1,7 @@
-function Dashboard() {
+import { Link } from "react-router-dom";
+
+function CounselorDashboard() {
+  const studentId = 1;
   return (
     // Statistics
     <>
@@ -67,16 +70,20 @@ function Dashboard() {
           <tbody role="rowgroup">
             <tr role="row" className="flex px-4">
               <td className="flex-2 py-3 text-lg" role="cell">
-                <div className="flex items-center gap-2">
-                  <div className="h-[64px] w-[64px]">
-                    <img
-                      src="https://i.pravatar.cc/150?img=12"
-                      className="h-full w-full rounded-full"
-                      alt=""
-                    />
+                <Link to={`students/${studentId}`}>
+                  <div className="flex items-center gap-2">
+                    <div className="h-[64px] w-[64px]">
+                      <img
+                        src="https://i.pravatar.cc/150?img=12"
+                        className="h-full w-full rounded-full"
+                        alt=""
+                      />
+                    </div>
+                    <p className="font-medium text-lg text-gray-600">
+                      John Doe
+                    </p>
                   </div>
-                  <p className="font-medium text-lg text-gray-600">John Doe</p>
-                </div>
+                </Link>
               </td>
               <td
                 className="flex flex-2 items-center py-3 font-medium text-lg text-gray-600"
@@ -93,16 +100,20 @@ function Dashboard() {
             </tr>
             <tr role="row" className="flex px-4">
               <td className="flex-2 py-3 text-lg" role="cell">
-                <div className="flex items-center gap-2">
-                  <div className="h-[64px] w-[64px] rounded-full">
-                    <img
-                      src="https://i.pravatar.cc/150?img=47"
-                      className="h-full w-full rounded-full"
-                      alt=""
-                    />
+                <Link to={`students/${studentId}`}>
+                  <div className="flex items-center gap-2">
+                    <div className="h-[64px] w-[64px] rounded-full">
+                      <img
+                        src="https://i.pravatar.cc/150?img=47"
+                        className="h-full w-full rounded-full"
+                        alt=""
+                      />
+                    </div>
+                    <p className="font-medium text-lg text-gray-600">
+                      Jane Doe
+                    </p>
                   </div>
-                  <p className="font-medium text-lg text-gray-600">Jane Doe</p>
-                </div>
+                </Link>
               </td>
               <td
                 className="flex flex-2 items-center py-3 font-medium text-lg text-gray-600"
@@ -124,4 +135,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default CounselorDashboard;

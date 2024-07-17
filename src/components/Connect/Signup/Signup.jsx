@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { ROLES } from "../../../constants";
 import { capitalize } from "../../../utils";
@@ -12,7 +12,7 @@ function Signup() {
   const [role, setRole] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSignupForm = async (e) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ function Signup() {
         throw new Error(result.error.message);
       }
 
-      history.push("/login");
+      navigate("/login");
     } catch (error) {
       setErrorMessage(error.message);
     }
