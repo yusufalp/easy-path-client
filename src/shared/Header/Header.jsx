@@ -14,7 +14,7 @@ function Header({ user }) {
   };
 
   return (
-    <header className="w-full">
+    <header className="w-full border-b-2 border-gray-500">
       <nav>
         <ul className="flex flex-row justify-end">
           {!user ? (
