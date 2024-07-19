@@ -28,10 +28,10 @@ function CounselorDashboard() {
         </div>
       </div>
 
-      <div className="bg-gray-200 m-2 rounded-2xl">
+      <div className="m-2 rounded-2xl">
         <table
           role="table"
-          className="relative w-full my-8 bg-gray-200 rounded-2xl"
+          className="relative w-full my-8 bg-gray-100 rounded-2xl"
         >
           <thead className="h-16 border-b-2 border-gray-600">
             <tr role="row" className="flex px-4">
