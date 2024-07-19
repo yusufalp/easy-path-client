@@ -65,6 +65,16 @@ function CounselorDashboard() {
                   Class of
                 </div>
               </th>
+              <th
+                colSpan="1"
+                role="columnheader"
+                title="Toggle SortBy"
+                className="flex-1"
+              >
+                <div className="flex items-center justify-between pb-2 pt-4 uppercase tracking-wide text-gray-600">
+                  Status
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody role="rowgroup">
@@ -95,7 +105,19 @@ function CounselorDashboard() {
                 className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
                 role="cell"
               >
-                <p>2025</p>
+                <p>2024</p>
+              </td>
+              <td
+                className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
+                role="cell"
+              >
+                <div className="group relative">
+                  <p className="w-8 h-8 bg-green-400 rounded-full">
+                    <span className="absolute left-12 bg-gray-600 text-white border rounded-[10%] px-2 opacity-0 group-hover:opacity-100">
+                      Graduated
+                    </span>
+                  </p>
+                </div>
               </td>
             </tr>
             <tr role="row" className="flex px-4">
@@ -126,6 +148,60 @@ function CounselorDashboard() {
                 role="cell"
               >
                 <p>2026</p>
+              </td>
+              <td
+                className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
+                role="cell"
+              >
+                <div className="group relative">
+                  <p className="w-8 h-8 bg-blue-300 rounded-full">
+                    <span className="absolute left-12 bg-gray-600 text-white border rounded-[10%] px-2 opacity-0 group-hover:opacity-100">
+                      Active
+                    </span>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr role="row" className="flex px-4">
+              <td className="flex-2 py-3 text-lg" role="cell">
+                <Link to={`students/${studentId}`}>
+                  <div className="flex items-center gap-2">
+                    <div className="h-[64px] w-[64px] rounded-full">
+                      <img
+                        src="https://i.pravatar.cc/150?img=35"
+                        className="h-full w-full rounded-full"
+                        alt=""
+                      />
+                    </div>
+                    <p className="font-medium text-lg text-gray-600">
+                      Jin Doe
+                    </p>
+                  </div>
+                </Link>
+              </td>
+              <td
+                className="flex flex-2 items-center py-3 font-medium text-lg text-gray-600"
+                role="cell"
+              >
+                <p>Campolindo High School</p>
+              </td>
+              <td
+                className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
+                role="cell"
+              >
+                <p>2028</p>
+              </td>
+              <td
+                className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
+                role="cell"
+              >
+                <div className="group relative">
+                  <p className="w-8 h-8 bg-gray-300 rounded-full">
+                    <span className="absolute left-12 bg-gray-600 text-white border rounded-[10%] px-2 opacity-0 group-hover:opacity-100">
+                      Inactive
+                    </span>
+                  </p>
+                </div>
               </td>
             </tr>
           </tbody>
