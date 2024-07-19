@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { login } from "../../../store/features/authSlice";
 
@@ -10,7 +10,7 @@ function Login() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLoginForm = async (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ function Login() {
 
       dispatch(login({ user, token }));
 
-      history.push("/dashboard");
+      navigate(`/dashboard/${user._id}`);
     } catch (error) {
       setErrorMessage(error.message);
     }

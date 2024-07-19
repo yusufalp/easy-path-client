@@ -14,7 +14,7 @@ function Header({ user }) {
   };
 
   return (
-    <header className="w-full border-b-2 border-gray-500">
+    <header className="w-full h-[80px] border-b-2 border-gray-500">
       <nav>
         <ul className="flex flex-row justify-end">
           {!user ? (
@@ -55,13 +55,13 @@ function Header({ user }) {
               </div>
               <ul
                 onClick={handleToggleMenu}
-                className={`w-40 bg-white border absolute right-0 shadow-xl top-0 mt-16 ${
+                className={`w-40 bg-white border absolute right-0 shadow-xl top-0 mt-16 z-10 ${
                   menuToggle && "hidden"
                 }`}
               >
                 <li className="flex items-center cursor-pointer text-gray-600 text-lg border-b-2 border-transparent focus:text-indigo-700 focus:outline-none hover:bg-gray-100 hover:text-blue-700 hover:border-blue-700 hover:cursor-pointer">
                   <Link
-                    to="/dashboard"
+                    to="/dashboard/:userId"
                     className="flex items-center w-full py-2 focus:underline focus:text-indigo-700 focus:outline-none"
                   >
                     <span className="ml-2">Dashboard</span>
