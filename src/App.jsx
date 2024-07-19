@@ -14,16 +14,21 @@ function App() {
   return (
     <>
       <Header user={user} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard/:counselorId" element={<CounselorDashboard />} />
-        <Route
-          path="/dashboard/:counselorId/students/:studentId"
-          element={<StudentProfile />}
-        />
-      </Routes>
+      <div className="w-full md:w-[90%] lg:w-[80%] max-w-[1279px] m-auto">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/dashboard/:counselorId"
+            element={<CounselorDashboard />}
+          />
+          <Route
+            path="/dashboard/:counselorId/students/:studentId"
+            element={<StudentProfile />}
+          />
+        </Routes>
+      </div>
     </>
   );
 }

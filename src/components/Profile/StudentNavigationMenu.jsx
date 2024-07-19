@@ -1,3 +1,6 @@
+import {Fragment} from "react";
+import PropTypes from "prop-types";
+
 const studentNavigationMenuItems = [
   {
     svgPath:
@@ -31,13 +34,16 @@ const studentNavigationMenuItems = [
   },
 ];
 
-function StudentNavigationMenu() {
+function StudentNavigationMenu({ setCurrentSection }) {
   return (
     <div className="w-64 bg-white py-2 mt-2 mx-4 flex-3 shadow-lg border-x border-t border-blue-300">
       <ul className="pl-4 py-4 text-lg flex flex-col gap-4">
-        {studentNavigationMenuItems.map((item) => (
-          <>
-            <li className="w-36 flex gap-2 border-b-2 border-transparent hover:bg-gray-100 hover:text-blue-700 hover:border-blue-700 hover:cursor-pointer">
+        {studentNavigationMenuItems.map((item, index) => (
+          <Fragment key={`${item.title}-${index}`}>
+            <li
+              className="w-36 flex gap-2 border-b-2 border-transparent hover:bg-gray-100 hover:text-blue-700 hover:border-blue-700 hover:cursor-pointer"
+              onClick={() => setCurrentSection(item.title)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -54,11 +60,15 @@ function StudentNavigationMenu() {
               </svg>
               <p>{item.title}</p>
             </li>
-          </>
+          </Fragment>
         ))}
       </ul>
     </div>
   );
 }
+
+StudentNavigationMenu.propTypes = {
+  setCurrentSection: PropTypes.func.isRequired,
+};
 
 export default StudentNavigationMenu;
