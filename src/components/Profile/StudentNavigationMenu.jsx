@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import { Fragment } from "react";
 import PropTypes from "prop-types";
 
 const studentNavigationMenuItems = [
@@ -68,6 +68,7 @@ function StudentNavigationMenu({ setCurrentSection }) {
 }
 
 StudentNavigationMenu.propTypes = {
+  currentSection: PropTypes.string.isRequired,
   setCurrentSection: PropTypes.func.isRequired,
 };
 

@@ -4,8 +4,8 @@ function StudentInformation() {
       <p className="text-center text-2xl">Personal Information</p>
       <ul className="text-gray-600 shadow-sm px-2">
         <li className="border-b border-gray-400 text-lg my-1 flex justify-between items-center">
-          <span>Class of:</span>
-          <span>2026</span>
+          <span>Grade</span>
+          <span>12</span>
         </li>
         <li className="border-b border-gray-400 text-lg my-1 flex justify-between items-center">
           <span>Email:</span>

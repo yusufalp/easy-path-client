@@ -62,7 +62,7 @@ function CounselorDashboard() {
                 className="flex-1"
               >
                 <div className="flex items-center justify-between pb-2 pt-4 uppercase tracking-wide text-gray-600">
-                  Class of
+                  Grade
                 </div>
               </th>
               <th
@@ -105,7 +105,7 @@ function CounselorDashboard() {
                 className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
                 role="cell"
               >
-                <p>2024</p>
+                <p>12</p>
               </td>
               <td
                 className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
@@ -147,7 +147,7 @@ function CounselorDashboard() {
                 className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
                 role="cell"
               >
-                <p>2026</p>
+                <p>12</p>
               </td>
               <td
                 className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
@@ -189,7 +189,7 @@ function CounselorDashboard() {
                 className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"
                 role="cell"
               >
-                <p>2028</p>
+                <p>10</p>
               </td>
               <td
                 className="flex flex-1 items-center py-3 font-medium text-lg text-gray-600"

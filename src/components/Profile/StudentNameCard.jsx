@@ -12,7 +12,7 @@ function StudentNameCard({ setCurrentSection }) {
       </div>
       <h1
         className="text-gray-700 text-2xl text-center font-bold leading-8 my-4 hover:underline hover:cursor-pointer"
-        onClick={() => setCurrentSection("default")}
+        onClick={() => setCurrentSection("")}
       >
         Jane Doe
       </h1>
