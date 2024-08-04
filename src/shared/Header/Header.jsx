@@ -14,7 +14,12 @@ function Header({ user }) {
   };
 
   return (
-    <header className="w-full h-[80px] border-b-2 border-gray-500">
+    <header className="w-full h-[80px] flex justify-between border-b-2 border-gray-500">
+      <img
+        src="src/assets/placeholder-logo.png"
+        alt=""
+        className="h-[78px]"
+      />
       <nav>
         <ul className="flex flex-row justify-end">
           {!user ? (
