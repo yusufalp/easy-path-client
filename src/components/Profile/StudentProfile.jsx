@@ -15,7 +15,7 @@ function StudentProfile() {
   const [currentSection, setCurrentSection] = useState("");
 
   return (
-    <div className="h-[calc(100vh-80px)] flex">
+    <div className="h-[calc(100vh-80px)] flex flex-col md:flex-row">
       <div className="flex flex-col">
         <StudentNameCard currentSection={currentSection} setCurrentSection={setCurrentSection} />
         <StudentNavigationMenu setCurrentSection={setCurrentSection} />

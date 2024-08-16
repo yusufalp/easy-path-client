@@ -36,7 +36,7 @@ const studentNavigationMenuItems = [
 
 function StudentNavigationMenu({ setCurrentSection }) {
   return (
-    <div className="w-64 bg-white py-2 mt-2 mx-4 flex-3 shadow-lg border-x border-t border-blue-300">
+    <div className="w-full md:w-64 bg-white py-2 mt-2 mx-4 flex-3 shadow-lg border-x border-t border-blue-300">
       <ul className="pl-4 py-4 text-lg flex flex-col gap-4">
         {studentNavigationMenuItems.map((item, index) => (
           <Fragment key={`${item.title}-${index}`}>

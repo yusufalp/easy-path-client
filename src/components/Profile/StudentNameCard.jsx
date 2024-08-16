@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function StudentNameCard({ setCurrentSection }) {
   return (
-    <div className="w-64 h-64 bg-white py-2 mt-4 mx-4 border border-t-8 border-blue-300 rounded-t-lg shadow-lg">
+    <div className="w-full md:w-64 h-64 bg-white py-2 mt-4 mx-4 border border-t-8 border-blue-300 rounded-t-lg shadow-lg">
       <div className="flex items-center justify-center">
         <img
           src="https://i.pravatar.cc/150?img=47"
