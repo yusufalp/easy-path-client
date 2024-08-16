@@ -1,18 +1,43 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { logout } from "../../store/features/authSlice";
 
 function Header() {
   const user = useSelector((state) => state.auth.user);
 
   const [menuToggle, setMenuToggle] = useState(true);
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleToggleMenu = () => {
     setMenuToggle((prevState) => !prevState);
   };
 
-  const handleLogout = () => {
-    console.log("logout :>> ");
+  const handleLogout = async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/auth/logout`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      const result = await response.json();
+
+      if (result.error) {
+        throw new Error(result.error.message);
+      }
+
+      dispatch(logout({ user: null, token: null }));
+
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
