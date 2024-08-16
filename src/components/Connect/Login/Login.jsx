@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import { login } from "../../../store/features/authSlice";
@@ -11,6 +11,14 @@ function Login() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const user = useSelector((state) => state.auth.user);
+
+  useEffect(() => {
+    if (user) {
+      navigate(`/dashboard/${user._id}`);
+    }
+  }, [navigate, user]);
 
   const handleLoginForm = async (e) => {
     e.preventDefault();

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { ROLES } from "../../../constants";
 import { capitalize } from "../../../utils";
@@ -13,6 +14,14 @@ function Signup() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
+
+  const user = useSelector((state) => state.auth.user);
+
+  useEffect(() => {
+    if (user) {
+      navigate(`/dashboard/${user._id}`);
+    }
+  }, [navigate, user]);
 
   const handleSignupForm = async (e) => {
     e.preventDefault();

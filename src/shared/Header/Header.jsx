@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
-function Header({ user }) {
+function Header() {
+  const user = useSelector((state) => state.auth.user);
+
   const [menuToggle, setMenuToggle] = useState(true);
 
   const handleToggleMenu = () => {
@@ -15,11 +17,7 @@ function Header({ user }) {
 
   return (
     <header className="w-full h-[80px] flex justify-between border-b-2 border-gray-500">
-      <img
-        src="src/assets/placeholder-logo.png"
-        alt=""
-        className="h-[78px]"
-      />
+      <img src="src/assets/placeholder-logo.png" alt="" className="h-[78px]" />
       <nav>
         <ul className="flex flex-row justify-end">
           {!user ? (
@@ -96,9 +94,5 @@ function Header({ user }) {
     </header>
   );
 }
-
-Header.propTypes = {
-  user: PropTypes.object,
-};
 
 export default Header;
