@@ -17,7 +17,7 @@ function StudentProfile() {
   return (
     <div className="h-[calc(100vh-80px)] flex flex-col md:flex-row">
       <div className="flex flex-col">
-        <StudentNameCard currentSection={currentSection} setCurrentSection={setCurrentSection} />
+        <StudentNameCard setCurrentSection={setCurrentSection} />
         <StudentNavigationMenu setCurrentSection={setCurrentSection} />
       </div>
       <div className="bg-white py-2 mt-4 mx-4 flex-10 border border-t-8 border-blue-300 rounded-t-lg">

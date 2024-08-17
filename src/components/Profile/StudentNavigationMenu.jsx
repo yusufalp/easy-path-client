@@ -68,7 +68,6 @@ function StudentNavigationMenu({ setCurrentSection }) {
 }
 
 StudentNavigationMenu.propTypes = {
-  currentSection: PropTypes.string.isRequired,
   setCurrentSection: PropTypes.func.isRequired,
 };
 
